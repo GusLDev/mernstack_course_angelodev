@@ -1,0 +1,36 @@
+*****************************STEPS THAT WE NEED TO DO*********************************************
+*****************************1.- CREATING THE STRUCTURE***********************************************
+* Create a folder for the BackEnd
+* Create the package.json with npm init -y command, whitin BackEnd folder 
+* Create .env file
+* Create src (source) folder
+* Whithin src folder we are going to create
+    *   index.js 
+    *   app.js
+    *   database.js
+    *   routes folder 
+    *   models folder 
+    *   controller folder 
+*****************************2.- INSTALLING DEPENDENCES************************************************
+npm i express mongoose dotenv cors
+npm i nodemon -D
+
+-------------------------------------------------------------------------------------------------------
+package.json whitin this file we have the dependences and modules that we need for our project
+.env This file will help us to create the  enviroments variables
+src folder In this folder we are going to create the main structure of the project
+index.js we are going to create the boot of our server
+app.js we are going to set the settings of our server here
+database.js Here we are going to create and define the link to connect the server with the database
+routes folder Here we are going to create routes for the crud querys
+models folder We are going to create the models to access to database and our schemas
+controller folder Here is the logic or the functions that allow you answer to the querys
+express is a web application framework for the Node.js script,
+It will allow us to write code for the server in a simple way and provides us with libraries such as router
+mongoose it's a mongoDB module it allow to create the link to our server and our database, it also allow to create
+schemas
+dontenv allow you make the configuration for our enviroments variables and, of course, use that configuration in 
+our project
+cors allow to have a connection between our backend server and our frontEnd server
+nodemon It's to usefull for automatic changes in the backend, beacuse when we make a change this dependence
+restart the server for see the changes
