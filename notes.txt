@@ -14,7 +14,9 @@
 *****************************2.- INSTALLING DEPENDENCES************************************************
 npm i express mongoose dotenv cors
 npm i nodemon -D
-
+*****************************3.- CONFIGURATION PORT IN APP JS ****************************************
+*****************************4.- WE GET THE CONFIGURATION IN INDEX.JS FROM APP.JS AND WE LAUNCHED******
+*****************************5.- WE ARE GOING TO CONECT THE SERVER WITH THE DB IN database.js *********
 -------------------------------------------------------------------------------------------------------
 package.json whitin this file we have the dependences and modules that we need for our project
 .env This file will help us to create the  enviroments variables
