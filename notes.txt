@@ -20,6 +20,7 @@ npm i nodemon -D
 *****************************6.- WE NEED TO MAKE OUR MIDDLEWARES ***************************************
 *****************************7.- WE NEED TO MAKE OUR ROUTES ********************************************
 *****************************8.- WE NEED TO CREATE OUR SCHEMAS AND MODELS*******************************
+*****************************9.- WE NEED TO CREATE A CONTROLLER*****************************************
 -------------------------------------------------------------------------------------------------------
 package.json whitin this file we have the dependences and modules that we need for our project
 .env This file will help us to create the  enviroments variables
@@ -40,3 +41,4 @@ cors allow to have a connection between our backend server and our frontEnd serv
 nodemon It's to usefull for automatic changes in the backend, beacuse when we make a change this dependence
 restart the server for see the changes
 middlewares: these are important because before to execute a route it will validate a request or configuration
+req in a function has a json with the information that the user wrote.
