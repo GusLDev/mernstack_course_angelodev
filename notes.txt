@@ -18,6 +18,7 @@ npm i nodemon -D
 *****************************4.- WE GET THE CONFIGURATION IN INDEX.JS FROM APP.JS AND WE LAUNCHED******
 *****************************5.- WE ARE GOING TO CONECT THE SERVER WITH THE DB IN database.js *********
 *****************************6.- WE NEED TO MAKE OUR MIDDLEWARES ***************************************
+*****************************6.- WE NEED TO MAKE OUR ROUTES ***************************************
 -------------------------------------------------------------------------------------------------------
 package.json whitin this file we have the dependences and modules that we need for our project
 .env This file will help us to create the  enviroments variables
