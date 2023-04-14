@@ -12,6 +12,6 @@ app.use(cors()) //This for get request for other servers that are not our backen
 app.use(express.json()) //This is for validate json's send and get
 //Rutas
 app.get('/',(req,res)=>{
-    res.send('Bienvenido ami api rest full');
+    res.send('WELCOME TO MY FULL REST API');
 })
 module.exports = app;
