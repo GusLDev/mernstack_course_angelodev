@@ -27,6 +27,10 @@ npm i nodemon -D
 *****************************************FRONTEND STEPS****************************************************
 ************************1.-CREATE THE FOLDER AND INSTALL DEPENDENCES npx create-react-app frontend*********
 ************************2.- CREATE THE COMPONENTS *********************************************************
+************************3.- INSTALL REACT ROUTER DOM FOR DO THE NAVBAR*************************************
+    * npm i react-router-dom
+************************4.- IMPORT THE COMPONENTS *********************************************************
+***********************************************************************************************************
 -------------------------------------------------------------------------------------------------------
 package.json whitin this file we have the dependences and modules that we need for our project
 .env This file will help us to create the  enviroments variables
