@@ -30,6 +30,7 @@ npm i nodemon -D
 ************************3.- INSTALL REACT ROUTER DOM FOR DO THE NAVBAR*************************************
     * npm i react-router-dom
 ************************4.- IMPORT THE COMPONENTS *********************************************************
+************************5.- CREATE A NAVBAR WITH LINKS NOT ANCHORS*****************************************
 ***********************************************************************************************************
 -------------------------------------------------------------------------------------------------------
 package.json whitin this file we have the dependences and modules that we need for our project
