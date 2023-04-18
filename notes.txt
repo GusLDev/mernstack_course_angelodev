@@ -31,6 +31,9 @@ npm i nodemon -D
     * npm i react-router-dom
 ************************4.- IMPORT THE COMPONENTS *********************************************************
 ************************5.- CREATE A NAVBAR WITH LINKS NOT ANCHORS*****************************************
+************************6.- CREATE POST *******************************************************************
+************************7.- I INSTALLED AXIOS FOR REQUESTS ************************************************
+    *npm i axios
 ***********************************************************************************************************
 -------------------------------------------------------------------------------------------------------
 package.json whitin this file we have the dependences and modules that we need for our project
@@ -53,3 +56,4 @@ nodemon It's to usefull for automatic changes in the backend, beacuse when we ma
 restart the server for see the changes
 middlewares: these are important because before to execute a route it will validate a request or configuration
 req in a function has a json with the information that the user wrote.
+Axios allows us to make requests or calls to the content of an HTTP link
