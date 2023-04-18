@@ -22,6 +22,7 @@ npm i nodemon -D
 *****************************8.- WE NEED TO CREATE OUR SCHEMAS AND MODELS*******************************
 *****************************9.- WE NEED TO CREATE A CONTROLLER*****************************************
 *****************************10.- WE NEED TO ADD OUR FUNCTIONS FORM CONTROLLER TO USER.JS***************
+*****************************11.- TEST YOUR ROUTES WITH A SOFTWARE LIKE POSTMAN/INSOMNIA
 -------------------------------------------------------------------------------------------------------
 package.json whitin this file we have the dependences and modules that we need for our project
 .env This file will help us to create the  enviroments variables
