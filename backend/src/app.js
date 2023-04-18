@@ -14,4 +14,7 @@ app.use(express.json()) //This is for validate json's send and get
 app.get('/',(req,res)=>{
     res.send('WELCOME TO MY FULL REST API');
 })
+
+//Route for our user API
+app.use('/api/users',require('./routes/user'))
 module.exports = app;
