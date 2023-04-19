@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-
+import {useParams} from 'react-router-dom'
 const CreateUser = () => {
   const initialValue = {
     name: '',
@@ -9,7 +9,10 @@ const CreateUser = () => {
     phone: 0,
     email: ''
   }
+  let {id} = useParams();
+
   const[user,setUser] = useState(initialValue);
+  const [subId,setSubId] = useState(id);
 
   const captureData = (e) =>{
     const{name,value} = e.target
@@ -31,12 +34,43 @@ const CreateUser = () => {
 
     setUser({...initialValue}) //RESET VALUES
   }
+///////////THIS IS THE LOGIC FOR EDIT 
+
+const updateUser = async (e) =>{
+  e.preventDefault();
+  const newUser = {
+    name: user.name,
+    lastname: user.lastname,
+    age: user.age,
+    phone: user.phone,
+    email: user.email
+  }
+  await axios.put('http://localhost:4000/api/users/'+subId, newUser)
+  setUser({...initialValue}) //RESET VALUES
+  setSubId('')
+}
+
+const getOne = async(idValue) =>{
+  const res = await axios.get('http://localhost:4000/api/users/'+idValue)
+  setUser({
+    name: res.data.name,
+    lastname: res.data.lastname,
+    age: res.data.age,
+    phone: res.data.phone,
+    email: res.data.email
+  })
+}
+  useEffect(()=>{
+    if(subId !== ''){
+      getOne(subId)
+    }
+  },[subId])
 
   return (
     <div className='col-md-6 offset-md-3'>
       <div className='card card-body'>
         <form onSubmit={saveData}>
-          <h2 className='text-center mb-3'>Crear Usuario</h2>
+          <h2 className='text-center mb-3'>CREATE USER</h2>
           <div className='mb-3'>
             <label>
               Name:
@@ -82,7 +116,10 @@ const CreateUser = () => {
             name='email' value={user.email}
             onChange={captureData} />
           </div>
-          <button className='btn btn-primary form-control'>Guardar Usuario</button>
+          <button className='btn btn-primary form-control'>SAVE USER</button>
+        </form>
+        <form onSubmit={updateUser}>
+          <button className='btn btn-danger form-control mt-2'>Update Information</button>
         </form>
       </div>
     </div>

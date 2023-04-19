@@ -1,5 +1,7 @@
 import React, { useState,useEffect } from 'react'
 import axios from 'axios'
+import {Link} from 'react-router-dom';
+
 const UserList = () => {
 
   const [list, setList] = useState([])
@@ -33,6 +35,10 @@ const UserList = () => {
                 <button className='btn btn-danger' onClick={() => deleteUser(list._id)}>
                   Eliminar
                 </button>
+
+                <Link className='btn btn-primary m-1' to={'/edit/' + list._id}>
+                  Editar
+                </Link>
               </div>
             </div>
           </div>
