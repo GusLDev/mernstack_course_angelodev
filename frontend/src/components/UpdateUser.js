@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-const CreateUser = () => {
+import { useParams } from 'react-router-dom'
+const UpdateUser = () => {
   const initialValue = {
     name: '',
     lastname: '',
@@ -8,17 +9,20 @@ const CreateUser = () => {
     phone: 0,
     email: ''
   }
+  let { id } = useParams();
 
   const [user, setUser] = useState(initialValue);
+  const [subId, setSubId] = useState(id+'');
 
   const captureData = (e) => {
     const { name, value } = e.target
     setUser({ ...user, [name]: value })
   }
 
-  const saveData = async (e) => {
+  ///////////THIS IS THE LOGIC FOR EDIT 
+
+  const updateUser = async (e) => {
     e.preventDefault();
-    //REQUEST TO POST
     const newUser = {
       name: user.name,
       lastname: user.lastname,
@@ -26,16 +30,31 @@ const CreateUser = () => {
       phone: user.phone,
       email: user.email
     }
-
-    await axios.post('http://localhost:4000/api/users', newUser)
-
+    await axios.put('http://localhost:4000/api/users/' + subId, newUser)
     setUser({ ...initialValue }) //RESET VALUES
+    setSubId('')
   }
+
+  const getOne = async (idValue) => {
+    const res = await axios.get('http://localhost:4000/api/users/' + idValue)
+    setUser({
+      name: res.data.name,
+      lastname: res.data.lastname,
+      age: res.data.age,
+      phone: res.data.phone,
+      email: res.data.email
+    })
+  }
+  useEffect(() => {
+    if (subId !== '') {
+      getOne(subId)
+    }
+  }, [subId])
     return (
       <div className='col-md-6 offset-md-3'>
         <div className='card card-body'>
-          <form onSubmit={saveData}>
-            <h2 className='text-center mb-3'>CREATE USER</h2>
+          <form onSubmit={updateUser}>
+            <h2 className='text-center mb-3'>UPDATE USER</h2>
             <div className='mb-3'>
               <label>
                 Name:
@@ -81,11 +100,11 @@ const CreateUser = () => {
                 name='email' value={user.email}
                 onChange={captureData} />
             </div>
-            <button className='btn btn-primary form-control'>SAVE USER</button>
+            <button className='btn btn-primary form-control'>UPDATE USER</button>
           </form>
         </div>
       </div>
     )
 }
 
-export default CreateUser
+export default UpdateUser

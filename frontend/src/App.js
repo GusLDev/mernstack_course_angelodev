@@ -4,6 +4,7 @@ import {Routes,Route} from 'react-router-dom'
 import Navbar from './components/Navbar';
 import CreateUser from './components/CreateUser';
 import UserList from './components/UserList';
+import UpdateUser from './components/UpdateUser';
 function App() {
   return (
     <div className="">
@@ -12,7 +13,7 @@ function App() {
         <Routes>
           <Route path='/' element={<UserList/>}/>
           <Route path='/CreateUser' element={<CreateUser/>}/>
-          <Route path='/edit/:id' element={<CreateUser/>}/>
+          <Route path='/edit/:id' element={<UpdateUser/>}/>
         </Routes>
       </div>
     </div>
