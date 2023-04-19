@@ -11,6 +11,9 @@ const UserList = () => {
     }
     getUsers();
   }, [list])
+  const deleteUser = async(id) =>{
+      await axios.delete('http://localhost:4000/api/users/'+id)
+  }
   return (
     <div className='row'>
       {
@@ -27,7 +30,7 @@ const UserList = () => {
                 <p>Email: {list.Email}</p>
               </div>
               <div className='card-footer'>
-                <button className='btn btn-danger'>
+                <button className='btn btn-danger' onClick={() => deleteUser(list._id)}>
                   Eliminar
                 </button>
               </div>
