@@ -29,7 +29,7 @@ const UserList = () => {
                 <p>Lastname: {list.lastname}</p>
                 <p>Age: {list.age}</p>
                 <p>Phone: {list.phone}</p>
-                <p>Email: {list.Email}</p>
+                <p>Email: {list.email}</p>
               </div>
               <div className='card-footer'>
                 <button className='btn btn-danger' onClick={() => deleteUser(list._id)}>

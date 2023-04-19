@@ -28,7 +28,7 @@ const CreateUser = () => {
     }
 
     await axios.post('http://localhost:4000/api/users', newUser)
-
+    console.log(newUser)
     setUser({ ...initialValue }) //RESET VALUES
   }
     return (
